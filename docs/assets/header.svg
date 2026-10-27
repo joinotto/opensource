@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title description">
+  <title id="title">OpenSource</title>
+  <desc id="description">A clear start. A reviewed release.</desc>
+  <rect width="1200" height="300" rx="20" fill="#0c111b"/>
+  <path d="M0 248H1200M920 0V300" stroke="#233348" stroke-width="1"/>
+  <circle cx="1040" cy="142" r="57" fill="none" stroke="#5eead4" stroke-width="8"/>
+  <path d="m1015 142 18 18 36-36" fill="none" stroke="#5eead4" stroke-width="8"/>
+  <text x="58" y="94" fill="#5eead4" font-family="sans-serif" font-size="18" letter-spacing="4">OPEN SOURCE · BUILT WITH INTENT</text>
+  <text x="58" y="173" fill="#f3f6fb" font-family="sans-serif" font-size="52">OpenSource</text>
+  <text x="58" y="217" fill="#a5b4c8" font-family="sans-serif" font-size="20">A clear start. A reviewed release.</text>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenSource"
+  short_description: "Scaffold open-source projects and npm releases"
+  default_prompt: "Use $opensource to start an open-source package with consistent templates and a reviewed npm release path."

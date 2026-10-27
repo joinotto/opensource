@@ -1,0 +1,22 @@
+{
+  "name": "@ottoai/opensource",
+  "version": "0.1.0",
+  "description": "Open-source skill packages, TypeScript packages, and shared repository scaffolding.",
+  "private": true,
+  "type": "module",
+  "bin": { "opensource": "bin/opensource.mjs" },
+  "files": ["bin/", "skills/opensource/", "LICENSE", "NOTICE"],
+  "engines": { "node": ">=22.14.0" },
+  "scripts": {
+    "test": "node --test",
+    "check": "node --test && node scripts/check-package.mjs",
+    "release:check": "node scripts/release-readiness.mjs"
+  },
+  "license": "Apache-2.0",
+  "devDependencies": { "pnpm": "10.3.0" },
+  "keywords": ["agent-skills", "codex", "claude-code", "open-source", "scaffolding", "npm"],
+  "repository": { "type": "git", "url": "git+https://github.com/joinotto/opensource.git" },
+  "bugs": { "url": "https://github.com/joinotto/opensource/issues" },
+  "homepage": "https://github.com/joinotto/opensource#readme",
+  "publishConfig": { "access": "public", "tag": "latest" }
+}
