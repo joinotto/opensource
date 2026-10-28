@@ -157,6 +157,19 @@ for (const packageManager of ['npm', 'pnpm']) {
         } : {}),
       });
       assert.ok(!plan.files.some((path) => /^(skills\/|bin\/skills|skills-package)/.test(path)));
+      if (packageManager === 'pnpm') {
+        const testedVersion = JSON.parse(await readFile(join(rootPath, 'package.json'), 'utf8')).devDependencies.pnpm;
+        const testedTool = JSON.parse(await readFile(join(rootPath, 'node_modules/pnpm/package.json'), 'utf8'));
+        assert.equal(testedTool.version, testedVersion, 'Smoke tests must use the pinned pnpm version.');
+        const manifest = JSON.parse(await readFile(join(target, 'package.json'), 'utf8'));
+        assert.equal(manifest.packageManager, `pnpm@${testedVersion}`);
+        for (const workflowPath of ['.github/workflows/ci.yml', '.github/workflows/npm-stage.yml']) {
+          const workflow = await readFile(join(target, workflowPath), 'utf8');
+          const installed = [...workflow.matchAll(/npm install --global pnpm@([0-9.]+) --ignore-scripts/g)];
+          assert.ok(installed.length > 0, `${workflowPath} must install the tested pnpm version.`);
+          for (const match of installed) assert.equal(match[1], testedVersion);
+        }
+      }
       if (packageManager === 'npm') npm(['ci', '--ignore-scripts', '--no-audit', '--no-fund', '--cache', join(root, 'cache')], target);
       else run(node, [pnpm, 'install', '--frozen-lockfile', '--ignore-scripts', '--store-dir', join(root, 'store')], target);
       manager(plan.config, ['run', 'check'], target);

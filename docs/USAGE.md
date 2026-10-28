@@ -87,7 +87,7 @@ only in customization mode. Noninteractive JSON can set each directly.
 
 Runtime/version/keywords and npm settings do not apply to common-only output.
 Node runtime input accepts exact 22.14+ or 24.x versions; validation does not prove
-release availability. TypeScript 6.0.3 and pnpm 10.3.0 are pinned in generated files.
+release availability. TypeScript 6.0.3 and pnpm 10.34.9 are pinned in generated files.
 
 `publication: "deferred"` prepares packaging/staging but sets manifests private,
 blocks the release checker, and adds a false guard to the staging workflow.

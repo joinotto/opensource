@@ -171,7 +171,7 @@ function typeScriptFiles(c, common) {
         test: `${m} run build && node --test`,
       },
       ...(!workspace ? {
-        packageManager: m === 'pnpm' ? 'pnpm@10.3.0' : 'npm@12.2.1',
+        packageManager: m === 'pnpm' ? 'pnpm@10.34.9' : 'npm@12.2.1',
         devDependencies: { typescript: compiler.version },
       } : {}),
     };
@@ -195,7 +195,7 @@ function typeScriptFiles(c, common) {
     root = {
       ...publicManifest(c, c.name, c.description), private: true,
       workspaces: ['packages/*'],
-      packageManager: m === 'pnpm' ? 'pnpm@10.3.0' : 'npm@12.2.1',
+      packageManager: m === 'pnpm' ? 'pnpm@10.34.9' : 'npm@12.2.1',
       devDependencies: { typescript: compiler.version },
       scripts: {
         build: m === 'pnpm' ? 'pnpm -r run build' : 'npm run build --workspaces --if-present',
@@ -318,7 +318,7 @@ export function workflows(c) {
   const checkout = 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1';
   const setup = 'actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1';
   const setupSteps = `      - uses: ${checkout}\n      - uses: ${setup}\n        with:\n          node-version: '${c.nodeVersion}'\n          package-manager-cache: false\n` +
-    (c.packageManager === 'pnpm' ? '      - run: npm install --global pnpm@10.3.0 --ignore-scripts\n' : '');
+    (c.packageManager === 'pnpm' ? '      - run: npm install --global pnpm@10.34.9 --ignore-scripts\n' : '');
   const checkSteps = localCommands(c).split('\n').filter((line) => !line.endsWith('--help'))
     .map((line) => `      - run: ${line}\n`).join('');
   const files = {};
