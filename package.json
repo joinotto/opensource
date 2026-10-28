@@ -2,7 +2,7 @@
   "name": "@ottoai/opensource",
   "version": "0.1.0",
   "description": "Open-source skill packages, TypeScript packages, and shared repository scaffolding.",
-  "private": true,
+  "private": false,
   "type": "module",
   "bin": { "opensource": "bin/opensource.mjs" },
   "files": ["bin/", "skills/opensource/", "LICENSE", "NOTICE"],
