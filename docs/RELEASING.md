@@ -1,7 +1,9 @@
 # Releasing OpenSource
 
-The target is @ottoai/opensource@0.1.0 under latest. The manifest is still private.
-Do not stage or publish it yet.
+The target is @ottoai/opensource@0.1.0 under latest. This release candidate permits
+publication in its manifest, but staging remains disabled until the release
+change has an actual approving review and all readiness checks pass.
+Do not advertise 0.1.0 as published until its registry archive is verified.
 Complete the public-release checks in ROADMAP.md first.
 
 Copyright holder: Anurag Patel.
@@ -20,8 +22,9 @@ Its account-side setup is described in
 [the skill release guide](../skills/opensource/references/releasing.md).
 The public repository is joinotto/opensource. Private reporting is enabled and
 the npm environment names @geekfarmer as reviewer. This project's workflow is
-prepared, but its npm trusted publisher is not configured. NPM_STAGING_ENABLED
-is false. Repository setup does not authorize npm staging or publication.
+prepared. Its package-specific npm trusted publisher was verified on 2026-10-28:
+joinotto/opensource, npm-stage.yml, environment npm, createStagedPackage only.
+NPM_STAGING_ENABLED is false. Publisher setup is not a completed product review.
 
 ## Readiness
 
@@ -37,10 +40,10 @@ the actual maintainer-review identity/reference, confirmed ownership/reporting,
 and the verified npm-trust reference. Assertions in that file require evidence;
 they do not create independent review or security certification.
 
-The new npm package must exist before its trusted publisher can be configured.
-If the package does not exist, arrange a separately authorized bootstrap stage
-with the owner. That operation creates a public 0.0.0-stage placeholder. Do not
-advertise the real 0.1.0 version until it has been approved and verified.
+The npm name was bootstrapped on 2026-10-28. npm created its public 0.0.0-stage
+placeholder when the code-free 0.0.1-bootstrap.0 payload was staged. That payload
+remains unapproved and must not be approved as a product release.
+Do not advertise 0.1.0 until it has been approved and verified.
 
 ## Stage-only workflow
 
@@ -49,8 +52,8 @@ workflow npm-stage.yml, environment npm, permission createStagedPackage only.
 Do not allow direct createPackage publication. Confirm that every publisher on
 this package is stage-only. Confirm main protections and environment reviewers.
 
-After readiness review and separate authority, remove private in a reviewed
-change, run the CI matrix, and enable NPM_STAGING_ENABLED. Dispatch npm-stage.yml
+After readiness review and publication authority, require a reviewed manifest
+with private=false, run the CI matrix, and enable NPM_STAGING_ENABLED. Dispatch npm-stage.yml
 on main with the full reviewed source SHA. The workflow requires that SHA to match
 the checkout. Verification has no publishing permission; the OIDC job receives only
 the reviewed tarball and checksum file. It stages with npm 12.2.1 and provenance.

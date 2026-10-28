@@ -23,14 +23,14 @@
 - [x] Add installed-skill receipts, guarded upgrade/uninstall, preserved backups, and completed-uninstall restore.
 - [x] Add read-only release readiness checks for external account protections.
 - [x] Enable private vulnerability reporting, assign @geekfarmer, and add public community/support files.
-- [ ] Configure repository protection and stage-only npm trusted publishing.
+- [x] Configure repository protection and stage-only npm trusted publishing.
 - [x] Review packed inventory and local archive execution without publishing.
 - [ ] Obtain explicit staging/publication authority after readiness checks pass.
 
 ## 0.1.0 release candidate
 
 - [x] Confirm copyright holder Anurag Patel and assign @geekfarmer to security/release review.
-- [x] Dependency-free runtime, stable candidate version/tag metadata, private publication guard.
+- [x] Dependency-free runtime, stable candidate version/tag metadata, and guarded release preparation.
 - [x] Public archive allowlist and obvious credential-pattern checks.
 - [x] Stage-only workflow: reviewed source, checksummed artifact, protected environment, no approval command.
 - [x] macOS/Linux and Node 22/24 CI matrix prepared.
