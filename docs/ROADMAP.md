@@ -36,7 +36,7 @@
 - [x] macOS/Linux and Node 22/24 CI matrix prepared.
 - [x] Public issue/PR templates and dependency-update configuration.
 - [x] Recovery documentation and explicit native-Windows/filesystem limitations.
-- [ ] Run the CI matrix in the intended public repository.
+- [x] Run the CI matrix in the public repository: Linux/macOS, Node 22/24.
 - [ ] Confirm actual ownership, a monitored reporting route, maintainer review, and package-specific npm trust.
 
 Account or human-review items stay incomplete until verified. A candidate version
